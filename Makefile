@@ -863,7 +863,7 @@ endif
 LIBS_PROTOBUF = protobuf
 LIBS_PROTOC = protoc protobuf
 
-HOST_LDLIBS_PROTOC += $(addprefix -l, $(LIBS_PROTOC))
+HOST_LDLIBS_PROTOC += -L/usr/local/lib $(addprefix -l, $(LIBS_PROTOC))
 
 ifeq ($(PROTOBUF_PKG_CONFIG),true)
 LDLIBS_PROTOBUF += $(shell $(PKG_CONFIG) --libs-only-l protobuf)
